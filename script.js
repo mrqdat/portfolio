@@ -20,22 +20,22 @@ for(var i = 0; themeDots.length > i; i++ ){
 function setTheme(mode){
     if(mode == 'light'){
          document.getElementById('theme-color').href = 'main.css';
-         document.getElementById('browser-theme-color').content = '#eaeaea';
+         document.querySelector("meta[name=theme-color]").setAttribute('content','#eaeaea');
     }
 
     if (mode == 'blue') {
         document.getElementById('theme-color').href = 'blue.css';
-        document.getElementById('browser-theme-color').content = '#15202b';
+        document.querySelector("meta[name=theme-color]").setAttribute('content','#15202b');
     }
 
     if (mode == 'purple') {
         document.getElementById('theme-color').href = 'purple.css';
-        document.getElementById('browser-theme-color').content = '#46344e';
+        document.querySelector("meta[name=theme-color]").setAttribute('content','#46344e');
     }
 
     if (mode == 'green') {
         document.getElementById('theme-color').href = 'green.css';
-        document.getElementById('browser-theme-color').content = '#606b56';
+        document.querySelector("meta[name=theme-color]").setAttribute('content','#606b56');
     }
 
     localStorage.setItem('theme', mode);
