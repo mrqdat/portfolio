@@ -152,7 +152,7 @@
                     <input id="email" class="input-field" type="text" name="email" value></input>
                     <label type="text">Message</label> 
                     <textarea id="message" class="input-field" type="text" name="message" value></textarea>                
-                    <input id="submit-button" type="submit" value="send">
+                    <input id="submit-button" type="submit" value="Send" alt="send this mail using email app">
                     <!-- <input id="submit-button" type="button" value="send" onclick="sendEmail()"> -->
                 </form>
             </div>
@@ -169,20 +169,8 @@
                 var email = $('#email').val();
                 var mess = $('#message').val();
                 var newmess = mess.replace(/\s/g,"%20");
-                // Email.send({
-                //     SercurityToken: "7355c0f7-3dae-46e1-ad91-9b8e8aace2fb",
-                //     Host : "smtp.gmail.com",
-                //     Username : email,
-                //     Password : "nguyenquocdat",
-                //     To : 'q.dat@outlook.com',
-                //     From : email,
-                //     Subject : subject,
-                //     Body : mess
-                //     }).then(
-                //         message => alert('Mail sent successfully')
-                //         );
-
-                var mailUrl = 'mailto:' + email + '?subject=' + subject + '&body=' + newmess ;
+                
+                var mailUrl = 'mailto:nhun49747@gmail.com?subject=' + subject + '&body=' + newmess ;
                 $('#contact-form').attr('action', mailUrl);
                 console.log(subject, email, newmess);
                 });
