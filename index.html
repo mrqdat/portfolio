@@ -4,11 +4,13 @@
         <title>QUỐC ĐẠT</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
         <meta name="theme-color" content="" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> -->
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&family=Russo+One&display=swap" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="main.css" />
         <link id="theme-color" type="text/css" rel="stylesheet" href="">
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
         
     </head>
     <body>
@@ -140,23 +142,53 @@
         <section class="s2">
             <div class="main-container">
                 <h3 style="text-align: center;">Get in touch</h3>
-                <form action="" id="contact-form">
+                <form action="" id="contact-form" method="POST">
                     <a name="contact"></a>
                     <label type="text">Name</label> 
-                    <input class="input-field" type="text" name="name"></input>
+                    <input id="name" class="input-field" type="text" name="name" value></input>
                     <label type="text">Subject</label> 
-                    <input class="input-field" type="text" name="subject"></input>
+                    <input id="subject" class="input-field" type="text" name="subject" value></input>
                     <label type="text">Email</label> 
-                    <input class="input-field" type="text" name="email"></input>
+                    <input id="email" class="input-field" type="text" name="email" value></input>
                     <label type="text">Message</label> 
-                    <textarea class="input-field" type="text" name="message"></textarea>
+                    <textarea id="message" class="input-field" type="text" name="message" value></textarea>                
                     <input id="submit-button" type="submit" value="send">
+                    <!-- <input id="submit-button" type="button" value="send" onclick="sendEmail()"> -->
                 </form>
             </div>
         </section>
         
         <script type="text/JavaScript" src="script.js">
 
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#submit-button').click(function (){
+
+                var subject = $('#subject').val();
+                var email = $('#email').val();
+                var mess = $('#message').val();
+                var newmess = mess.replace(/\s/g,"%20");
+                // Email.send({
+                //     SercurityToken: "7355c0f7-3dae-46e1-ad91-9b8e8aace2fb",
+                //     Host : "smtp.gmail.com",
+                //     Username : email,
+                //     Password : "nguyenquocdat",
+                //     To : 'q.dat@outlook.com',
+                //     From : email,
+                //     Subject : subject,
+                //     Body : mess
+                //     }).then(
+                //         message => alert('Mail sent successfully')
+                //         );
+
+                var mailUrl = 'mailto:' + email + '?subject=' + subject + '&body=' + newmess ;
+                $('#contact-form').attr('action', mailUrl);
+                console.log(subject, email, newmess);
+                });
+            });
+            
+           
         </script>
     </body>
 </html>

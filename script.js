@@ -40,3 +40,21 @@ function setTheme(mode){
 
     localStorage.setItem('theme', mode);
 }
+
+
+// function sendEmail(){
+//     var subject = $('#subject').val();
+//     var email = $('#email').val();
+//     var mess = $('#message').val();
+//     var newmess = mess.replace(/\s/g,"%20");
+//     Email.send({
+//         SercurityToken: "ad6a197a-2f80-4d84-99af-bcf5179009cf",
+//         To : 'Q.Dat@outlook.com',
+//         From : email,
+//         Subject : subject,
+//         Body : mess
+//         }).then(
+//             alert('Mail sent successfully')
+//             );
+// }
+
