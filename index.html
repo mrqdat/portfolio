@@ -73,7 +73,7 @@
     
                         <h4>TOP EXPERTISE</h4>
     
-                        <p>Fullstack developer with primary focus on <br> ASP.NET + React: <a target="_blank" href="CV_viblo.pdf">Download <u>Resume</u></a></p>
+                        <p>Developer with focus on <br> ASP.NET + React: <a target="_blank" href="CV_viblo.pdf">Download <u>Resume</u></a></p>
     
                         <div id="skills">
                             <ul>
@@ -85,8 +85,9 @@
     
                             <ul>
                                 <li>React</li>
-                                <li>Git</li>
                                 <li>HTML/CSS</li>
+                                <li>Git</li>
+                                
                             </ul>
     
                         </div>
@@ -114,7 +115,7 @@
                         <div class="post-preview">
                             <h6 class="post-title">Shutter</h6>
                             <p class="post-intro">The easiest way to Share your photos with everyone </p>
-                            <a style="font-size: 14px; color:#17a2b7;"  href="post.html">Read more</a>
+                            <a style="font-size: 14px; color:#17a2b7;"  href="https://github.com/mrqdat/shutter" target="_blank">Read more</a>
                         </div>
                     </div>
 
@@ -123,7 +124,7 @@
                         <div class="post-preview">
                             <h6 class="post-title">simple chat room</h6>
                             <p class="post-intro">Simple step to connect your friends</p>
-                            <a style="font-size: 14px; color:#17a2b7;"  href="post.html">Read more</a>
+                            <a style="font-size: 14px; color:#17a2b7;"  href="https://github.com/mrqdat/react-chat" target="_blank">Read more</a>
                         </div>
                     </div>
 
@@ -132,7 +133,7 @@
                         <div class="post-preview">
                             <h6 class="post-title">Face recognition</h6>
                             <p class="post-intro">Simple app work with our images and recognize your face</p>
-                            <a style="font-size: 14px; color:#17a2b7;" href="post.html">Read more</a>
+                            <a style="font-size: 14px; color:#17a2b7;" href="https://github.com/mrqdat/face-recognition" target="_blank">Read more</a>
                         </div>
                     </div>
 
@@ -145,11 +146,11 @@
                 <form action="" id="contact-form" method="POST">
                     <a name="contact"></a>
                     <label type="text">Name</label> 
-                    <input id="name" class="input-field" type="text" name="name" value></input>
+                    <input id="name" class="input-field" type="text" name="name" value required></input>
                     <label type="text">Subject</label> 
-                    <input id="subject" class="input-field" type="text" name="subject" value></input>
+                    <input id="subject" class="input-field" type="text" name="subject" value required></input>
                     <label type="text">Message</label> 
-                    <textarea id="message" class="input-field" type="text" name="message" value></textarea>                
+                    <textarea id="message" class="input-field" type="text" name="message" value required></textarea>                
                     <input id="submit-button" type="submit" value="Send" alt="send this mail using email app">
                     <!-- <input id="submit-button" type="button" value="send" onclick="sendEmail()"> -->
                 </form>
@@ -163,14 +164,14 @@
             $(document).ready(function(){
                 $('#submit-button').click(function (){
 
-                var subject = $('#subject').val();
-                var email = $('#email').val();
-                var mess = $('#message').val();
-                var newmess = mess.replace(/\s/g,"%20");
-                
-                var mailUrl = 'mailto:nhun49747@gmail.com?subject=' + subject + '&body=' + newmess ;
-                $('#contact-form').attr('action', mailUrl);
-                console.log(subject, email, newmess);
+                    var subject = $('#subject').val();
+                    var email = $('#email').val();
+                    var mess = $('#message').val();
+                    var newmess = mess.replace(/\s/g,"%20");
+
+                    var mailUrl = 'mailto:nhun49747@gmail.com?subject=' + subject + '&body=' + newmess ;
+                    $('#contact-form').attr('action', mailUrl);
+                    console.log(subject, email, newmess);
                 });
             });
             
